@@ -2,7 +2,7 @@ require "Hashmaker/version"
 
 module Hashmaker
   def hashmaker
-    array = self.flatten.each_with_object(Hash.new { 0 }) do |i, result|
+    array = self.flatten.compact.each_with_object(Hash.new { 0 }) do |i, result|
       result[i] += 1
       result
     end
